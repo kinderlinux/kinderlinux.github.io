@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="darkreader-lock" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b12">
+  <meta name="description" content="KinderLinux — Linux için açık kaynak araçlar, çalışmalar ve projeler.">
+  <title>KinderLinux — Açık Kaynak Ekosistemi</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">İçeriğe geç</a>
+
+  <svg class="svg-sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-github" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.5"/><path d="M8 4.5V8l2.5 1.5"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 16 16"><rect x="2" y="2" width="5" height="5" rx="1"/><rect x="9" y="2" width="5" height="5" rx="1"/><rect x="2" y="9" width="5" height="5" rx="1"/><rect x="9" y="9" width="5" height="5" rx="1"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 16 16"><path d="M8 2 14 5.5 8 9 2 5.5 8 2Z"/><path d="m2 9 6 3.5 6-3.5"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 16 16"><path d="M8 13V3M4 7l4-4 4 4"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 16 16"><path d="M2 8h11M9 4l4 4-4 4"/></symbol>
+  </svg>
+
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="ambient" aria-hidden="true">
+    <span class="blob blob--1"></span>
+    <span class="blob blob--2"></span>
+    <span class="blob blob--3"></span>
+  </div>
+  <div class="grid-bg" aria-hidden="true"></div>
+
+  <div class="topline">
+    <div class="wrap topline__inner">
+      <span class="topline__group">
+        <svg class="i i--fill" aria-hidden="true"><use href="#i-github"></use></svg>
+        kinderlinux <svg class="i i--chev" aria-hidden="true"><use href="#i-arrow-right"></use></svg> açık kaynak atölyesi
+      </span>
+      <span class="topline__group topline__group--end">
+        <svg class="i" aria-hidden="true"><use href="#i-clock"></use></svg>
+        <span id="localClock">--:--</span>
+      </span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="#top" aria-label="KinderLinux ana sayfa">
+        <span class="brand__text">kinder<span>linux</span><small>// açık kaynak atölyesi</small></span>
+      </a>
+
+      <nav class="nav" id="siteNav" aria-label="Ana menü">
+        <a href="#top">KinderLinux</a>
+        <a href="#projeler">Projeler</a>
+        <a href="#yigin">Yığın</a>
+        <a href="#iletisim">İletişim</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn--small btn--ghost" href="https://github.com/kinderlinux" target="_blank" rel="noopener noreferrer">
+          <svg class="i i--fill" aria-hidden="true"><use href="#i-github"></use></svg> GitHub
+        </a>
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="Menüyü aç" aria-expanded="false" aria-controls="siteNav">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap hero__inner">
+        <div class="hero__copy">
+          <p class="eyebrow reveal">01 / KinderLinux</p>
+          <h1 class="hero__title reveal">
+            Linux için<br>
+            <span class="typed-line"><span class="hero__accent" data-words="el emeği, açık kaynak, yerel öncelikli">el emeği</span><span class="caret" aria-hidden="true"></span></span><br>
+            çalışmalar.
+          </h1>
+          <p class="hero__lead reveal">
+            Linux odaklı açık kaynak araçlar ve çalışmalar. Sade tasarım, temiz kaynak kodu,
+            gereksiz katman yok. Detaylar aşağıda.
+          </p>
+          <div class="hero__actions reveal">
+            <a class="btn btn--primary" href="#projeler">Projeleri keşfet <span aria-hidden="true">↓</span></a>
+            <a class="btn btn--ghost" href="https://github.com/kinderlinux" target="_blank" rel="noopener noreferrer">Depolara git <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+
+        <div class="hero__visual reveal" aria-hidden="true">
+          <div class="cube-stage">
+            <div class="cube">
+              <span class="cube__face cube__face--front"></span>
+              <span class="cube__face cube__face--back"></span>
+              <span class="cube__face cube__face--right"></span>
+              <span class="cube__face cube__face--left"></span>
+              <span class="cube__face cube__face--top"></span>
+              <span class="cube__face cube__face--bottom"></span>
+            </div>
+          </div>
+          <div class="orbit3d orbit3d--1" aria-hidden="true">
+            <div class="orbit3d__spin">
+              <span class="orbit3d__slot" style="--angle: 31.000deg"><span class="orbit3d__counter"><i><img src="./assets/rust.svg" alt=""> Rust</i></span></span>
+              <span class="orbit3d__slot" style="--angle: 91.000deg"><span class="orbit3d__counter"><i><img src="./assets/swift.svg" alt=""> Swift</i></span></span>
+              <span class="orbit3d__slot" style="--angle: 151.000deg"><span class="orbit3d__counter"><i><img src="./assets/go.svg" alt=""> Go</i></span></span>
+              <span class="orbit3d__slot" style="--angle: 211.000deg"><span class="orbit3d__counter"><i><img src="./assets/cs.svg" alt=""> C#</i></span></span>
+              <span class="orbit3d__slot" style="--angle: 271.000deg"><span class="orbit3d__counter"><i><img src="./assets/phpstorm.svg" alt=""> PhpStorm</i></span></span>
+              <span class="orbit3d__slot" style="--angle: 331.000deg"><span class="orbit3d__counter"><i><img src="./assets/idea.svg" alt=""> IntelliJ</i></span></span>
+            </div>
+          </div>
+          <div class="orbit3d orbit3d--2" aria-hidden="true">
+            <div class="orbit3d__spin">
+              <span class="orbit3d__slot" style="--angle: 62.000deg"><span class="orbit3d__counter"><i><img src="./assets/lua.svg" alt=""> Lua</i></span></span>
+              <span class="orbit3d__slot" style="--angle: 122.000deg"><span class="orbit3d__counter"><i><img src="./assets/rider.svg" alt=""> Rider</i></span></span>
+              <span class="orbit3d__slot" style="--angle: 182.000deg"><span class="orbit3d__counter"><i><img src="./assets/cpp.svg" alt=""> C++</i></span></span>
+              <span class="orbit3d__slot" style="--angle: 242.000deg"><span class="orbit3d__counter"><i><img src="./assets/java.svg" alt=""> Java</i></span></span>
+              <span class="orbit3d__slot" style="--angle: 302.000deg"><span class="orbit3d__counter"><i><img src="./assets/js.svg" alt=""> JavaScript</i></span></span>
+              <span class="orbit3d__slot" style="--angle: 2.000deg"><span class="orbit3d__counter"><i><img src="./assets/vim.svg" alt=""> Vim</i></span></span>
+            </div>
+          </div>
+          <div class="orbit3d orbit3d--3" aria-hidden="true">
+            <div class="orbit3d__spin">
+              <span class="orbit3d__slot" style="--angle: 93.000deg"><span class="orbit3d__counter"><i><img src="./assets/linux.svg" alt=""> Linux</i></span></span>
+              <span class="orbit3d__slot" style="--angle: 165.000deg"><span class="orbit3d__counter"><i><img src="./assets/php.svg" alt=""> PHP</i></span></span>
+              <span class="orbit3d__slot" style="--angle: 237.000deg"><span class="orbit3d__counter"><i><img src="./assets/bash.svg" alt=""> Bash</i></span></span>
+              <span class="orbit3d__slot" style="--angle: 309.000deg"><span class="orbit3d__counter"><i><img src="./assets/arch.svg" alt=""> Arch</i></span></span>
+              <span class="orbit3d__slot" style="--angle: 21.000deg"><span class="orbit3d__counter"><i><img src="./assets/ruby.svg" alt=""> Ruby</i></span></span>
+            </div>
+          </div>
+          <div class="orbit3d orbit3d--4" aria-hidden="true">
+            <div class="orbit3d__spin">
+              <span class="orbit3d__slot" style="--angle: 124.000deg"><span class="orbit3d__counter"><i><img src="./assets/rustrover.svg" alt=""> RustRover</i></span></span>
+              <span class="orbit3d__slot" style="--angle: 196.000deg"><span class="orbit3d__counter"><i><img src="./assets/kotlin.svg" alt=""> Kotlin</i></span></span>
+              <span class="orbit3d__slot" style="--angle: 268.000deg"><span class="orbit3d__counter"><i><img src="./assets/dart.svg" alt=""> Dart</i></span></span>
+              <span class="orbit3d__slot" style="--angle: 340.000deg"><span class="orbit3d__counter"><i><img src="./assets/html.svg" alt=""> HTML</i></span></span>
+              <span class="orbit3d__slot" style="--angle: 52.000deg"><span class="orbit3d__counter"><i><img src="./assets/webstorm.svg" alt=""> WebStorm</i></span></span>
+            </div>
+          </div>
+          <div class="orbit3d orbit3d--5" aria-hidden="true">
+            <div class="orbit3d__spin">
+              <span class="orbit3d__slot" style="--angle: 155.000deg"><span class="orbit3d__counter"><i><img src="./assets/css.svg" alt=""> CSS</i></span></span>
+              <span class="orbit3d__slot" style="--angle: 227.000deg"><span class="orbit3d__counter"><i><img src="./assets/c.svg" alt=""> C</i></span></span>
+              <span class="orbit3d__slot" style="--angle: 299.000deg"><span class="orbit3d__counter"><i><img src="./assets/ts.svg" alt=""> TypeScript</i></span></span>
+              <span class="orbit3d__slot" style="--angle: 11.000deg"><span class="orbit3d__counter"><i><img src="./assets/py.svg" alt=""> Python</i></span></span>
+              <span class="orbit3d__slot" style="--angle: 83.000deg"><span class="orbit3d__counter"><i><img src="./assets/goland.svg" alt=""> GoLand</i></span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projeler">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <div>
+            <p class="eyebrow">02 / Depolar</p>
+            <h2 class="section__title">Projeler<span class="dot">.</span></h2>
+          </div>
+          <p class="section__note">Üç depo: bir Linux aracı, Python ile yönetilen sanal sistem ve bu sayfanın kendisi. Her proje durumunu ve teknolojisini açıkça belirtiyor.</p>
+        </div>
+        <div class="rule"></div>
+
+        <div class="filters reveal" role="group" aria-label="Proje filtresi">
+          <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">Tümü <span>03</span></button>
+          <button class="filter" type="button" data-filter="arac" aria-pressed="false">Linux <span>02</span></button>
+          <button class="filter" type="button" data-filter="site" aria-pressed="false">Web sitesi <span>01</span></button>
+        </div>
+
+        <div class="project-grid" id="projectGrid">
+          <article class="card reveal" data-cat="arac" style="--i:0">
+            <div class="card__top"><span class="card__no">01</span><span class="badge badge--pause">Ara verildi</span></div>
+            <div class="card__icon" aria-hidden="true">▤</div>
+            <h3>PWFE</h3>
+            <p class="card__sub">Panda Web File Explorer</p>
+            <p class="card__desc">Yerel ağda çalışan dosya gezgini. README'sinde projeye ara verildiği ve şu anda kullanılmaması gerektiği açıkça yazıyor; tanıtım amaçlı listeleniyor.</p>
+            <ul class="tags"><li>Go</li><li>systemd</li><li>AGPL-3.0</li></ul>
+            <div class="card__foot"><a href="https://kinderlinux.github.io/PWFE/" target="_blank" rel="noopener noreferrer">Site ↗</a><a href="https://github.com/kinderlinux/PWFE" target="_blank" rel="noopener noreferrer">Depo ↗</a></div>
+          </article>
+
+          <article class="card reveal" data-cat="arac" style="--i:1">
+            <div class="card__top"><span class="card__no">02</span><span class="badge">Çalışma alanı</span></div>
+            <div class="card__icon" aria-hidden="true">⌨</div>
+            <h3>Python-Linux</h3>
+            <p class="card__sub">Python ile sanal Linux</p>
+            <p class="card__desc">Python ile yönetilen hafif bir sanal Linux sistemi. Gerçek kurulum veya sistem izni gerekmez; her şey ev dizinindeki <code>pythonlinux/.venv</code> içinde kalır. <code>plpm</code> ile GitHub dizininden paket eklenir. Geliştirme aşamasında.</p>
+            <ul class="tags"><li>Python</li><li>Simülatör</li><li>plpm</li></ul>
+            <div class="card__foot"><a href="https://kinderlinux.github.io/Python-Linux/" target="_blank" rel="noopener noreferrer">Site ↗</a><a href="https://github.com/kinderlinux/Python-Linux" target="_blank" rel="noopener noreferrer">Depo ↗</a></div>
+          </article>
+
+          <article class="card reveal" data-cat="site" style="--i:2">
+            <div class="card__top"><span class="card__no">03</span><span class="badge badge--live">Şu anki site</span></div>
+            <div class="card__icon" aria-hidden="true">▦</div>
+            <h3>kinderlinux.github.io</h3>
+            <p class="card__sub">GitHub Pages</p>
+            <p class="card__desc">Bu sayfanın kaynağı. Statik HTML, CSS ve JavaScript'ten oluşur; derleme adımı veya sunucu gerektirmez.</p>
+            <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+            <div class="card__foot"><a href="https://kinderlinux.github.io/" target="_blank" rel="noopener noreferrer">Site ↗</a><a href="https://github.com/kinderlinux/kinderlinux.github.io" target="_blank" rel="noopener noreferrer">Depo ↗</a></div>
+          </article>
+        </div>
+        <p class="filter-empty" id="filterEmpty" hidden>Bu kategoride proje yok.</p>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="yigin">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <div>
+            <p class="eyebrow">03 / Yığın</p>
+            <h2 class="section__title">Depolarda <em>ne var?</em><span class="dot">.</span></h2>
+          </div>
+          <p class="section__note">Her proje, kullandığı araçlar ve lisansla birlikte açıkça listelenir.</p>
+        </div>
+        <div class="rule"></div>
+        <div class="stack-grid">
+          <article class="stack-card reveal">
+            <span class="stack-card__glyph">▸</span>
+            <h3>PWFE</h3>
+            <p>Go sunucusu, tek HTML arayüz, systemd servisleri ve GitHub üzerinden güncelleme.</p>
+            <ul class="stack-list"><li>Go</li><li>HTML</li><li>systemd</li></ul>
+            <small>Kaynak: README · main.go · pwfe.service</small>
+          </article>
+          <article class="stack-card reveal">
+            <span class="stack-card__glyph">⌨</span>
+            <h3>Python-Linux</h3>
+            <p>Python ile yönetilen sanal sistem: ev dizininde <code>.venv</code>, terminalde Linux benzeri ortam, <code>plpm</code> paket yöneticisi.</p>
+            <ul class="stack-list"><li>Python</li><li>.venv</li><li>plpm</li></ul>
+            <small>Kaynak: website/index.html · website/plpm.html</small>
+          </article>
+          <article class="stack-card reveal">
+            <span class="stack-card__glyph">▦</span>
+            <h3>Bu sayfa</h3>
+            <p>Üç statik dosya. Derleme yok, paket yok; doğrudan GitHub Pages üzerinden yayınlanır.</p>
+            <ul class="stack-list"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+            <small>Kaynak: index.html · styles.css · script.js</small>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="iletisim">
+      <div class="wrap cta__inner reveal">
+        <p class="eyebrow">04 / İletişim</p>
+        <h2>Bir fikrin mi var?<br><span>Birlikte hayata geçirelim.</span></h2>
+        <p>Projeleri incele, bir sorun aç ya da katkı sun. Kapı açık.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="https://github.com/kinderlinux" target="_blank" rel="noopener noreferrer">GitHub'da bul <span aria-hidden="true">↗</span></a>
+          <a class="btn btn--ghost" href="https://github.com/kinderlinux/kinderlinux" target="_blank" rel="noopener noreferrer">Profil ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <a class="footer__brand" href="#top">
+        <span>kinderlinux<small>açık kaynak atölyesi</small></span>
+      </a>
+      <nav class="footer__links" aria-label="Alt menü">
+        <a href="#projeler"><svg class="i" aria-hidden="true"><use href="#i-grid"></use></svg> Projeler</a>
+        <a href="#yigin"><svg class="i" aria-hidden="true"><use href="#i-layers"></use></svg> Yığın</a>
+        <a href="https://github.com/kinderlinux" target="_blank" rel="noopener noreferrer"><svg class="i i--fill" aria-hidden="true"><use href="#i-github"></use></svg> GitHub</a>
+      </nav>
+      <a class="footer__top" href="#top" aria-label="Yukarı çık"><svg class="i" aria-hidden="true"><use href="#i-arrow-up"></use></svg></a>
+    </div>
+    <div class="wrap footer__bottom">
+      <p>© <span id="year">2026</span> KinderLinux · AGPL-3.0 · yerel öncelikli.</p>
+    </div>
+  </footer>
+</body>
+</html>
